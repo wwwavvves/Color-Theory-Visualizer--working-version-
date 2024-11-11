@@ -5,6 +5,10 @@ const originalColor = document.querySelector("#original");
 const complementaryColor = document.querySelector("#complementary");
 const titleOriginal = document.querySelector("#title-original");
 const titleComplementary = document.querySelector("#title-complementary");
+const colorModelsOriginal = document.querySelector(".color-models-original");
+const colorModelsComplementary = document.querySelector(
+  ".color-models-complementary"
+);
 
 colorPicker.addEventListener("input", updateColor);
 
@@ -26,8 +30,22 @@ function defaultColors() {
 
   originalColor.style.backgroundColor = color;
   complementaryColor.style.backgroundColor = complementaryHex;
-  titleOriginal.style.color = complementaryHex;
+  titleOriginal.style.color,
+    (colorModelsOriginal.style.color = complementaryHex);
   titleComplementary.style.color = color;
+  colorModelsOriginal.style.color = complementaryHex;
+  colorModelsComplementary.style.color = color;
+
+  colorModelsOriginal.innerHTML = `
+      <div class="hex">${color}</div>
+      <div class="rgb">rgb</div>
+      <div class="hsl">hsl</div>
+  `;
+  colorModelsComplementary.innerHTML = `
+      <div class="hex">${complementaryHex}</div>
+      <div class="rgb">rgb</div>
+      <div class="hsl">hsl</div>
+  `;
 }
 
 function updateColor(event) {
@@ -38,4 +56,17 @@ function updateColor(event) {
   complementaryColor.style.backgroundColor = complementaryHex;
   titleOriginal.style.color = complementaryHex;
   titleComplementary.style.color = color;
+  colorModelsOriginal.style.color = complementaryHex;
+  colorModelsComplementary.style.color = color;
+
+  colorModelsOriginal.innerHTML = `
+      <div class="hex">hex ${color}</div>
+      <div class="rgb">rgb</div>
+      <div class="hsl">hsl</div>
+    `;
+  colorModelsComplementary.innerHTML = `
+      <div class="hex">hex ${complementaryHex}</div>
+      <div class="rgb">rgb</div>
+      <div class="hsl">hsl</div>
+    `;
 }
