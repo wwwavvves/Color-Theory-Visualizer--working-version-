@@ -30,21 +30,16 @@ function defaultColors() {
 
   originalColor.style.backgroundColor = color;
   complementaryColor.style.backgroundColor = complementaryHex;
-  titleOriginal.style.color,
-    (colorModelsOriginal.style.color = complementaryHex);
+  titleOriginal.style.color = complementaryHex;
   titleComplementary.style.color = color;
   colorModelsOriginal.style.color = complementaryHex;
   colorModelsComplementary.style.color = color;
 
   colorModelsOriginal.innerHTML = `
       <div class="hex">${color}</div>
-      <div class="rgb">rgb</div>
-      <div class="hsl">hsl</div>
   `;
   colorModelsComplementary.innerHTML = `
       <div class="hex">${complementaryHex}</div>
-      <div class="rgb">rgb</div>
-      <div class="hsl">hsl</div>
   `;
 }
 
@@ -60,13 +55,9 @@ function updateColor(event) {
   colorModelsComplementary.style.color = color;
 
   colorModelsOriginal.innerHTML = `
-      <div class="hex">hex ${color}</div>
-      <div class="rgb">rgb</div>
-      <div class="hsl">hsl</div>
+      <div class="hex">${color}</div>
     `;
   colorModelsComplementary.innerHTML = `
-      <div class="hex">hex ${complementaryHex}</div>
-      <div class="rgb">rgb</div>
-      <div class="hsl">hsl</div>
+      <div class="hex">${complementaryHex}</div>
     `;
 }

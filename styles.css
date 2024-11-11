@@ -21,7 +21,10 @@ input {
   height: calc(100vh - 100px);
 }
 
-
+.color-models {
+  padding: 10px;
+  text-transform: uppercase;
+}
 
 #complementary {
   text-align: right;
