@@ -18,8 +18,16 @@ function getRGBValues(color) {
   const g = parseInt(color.slice(3, 5), 16);
   const b = parseInt(color.slice(5, 7), 16);
   
-  return {r, g, b};
+  return { r, g, b };
 }
+
+// working function to calculate constrast
+function calculateLuminance(original) {
+  const luminance = 0.2126 * original.r + 0.7152 * original.g + 0.0722 * original.b;
+  console.log(luminance);
+  // FIX
+}
+calculateLuminance(getRGBValues("#ffffff"))
 
 // returns complementary hex
 function getComplementaryColorHex(rgb) {
