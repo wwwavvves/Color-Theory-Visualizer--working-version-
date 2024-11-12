@@ -21,13 +21,13 @@ function getRGBValues(color) {
   return { r, g, b };
 }
 
-// working function to calculate constrast
-function calculateLuminance(original) {
-  const luminance = 0.2126 * original.r + 0.7152 * original.g + 0.0722 * original.b;
-  console.log(luminance);
-  // FIX
-}
-calculateLuminance(getRGBValues("#ffffff"))
+// // working function to calculate constrast
+// function calculateLuminance(original) {
+//   const luminance = 0.2126 * original.r + 0.7152 * original.g + 0.0722 * original.b;
+//   console.log(luminance);
+//   // FIX
+// }
+// calculateLuminance(getRGBValues("#ffffff"))
 
 // returns complementary hex
 function getComplementaryColorHex(rgb) {
@@ -62,12 +62,12 @@ function defaultColors() {
   colorModelsComplementary.style.color = color;
 
   colorModelsOriginal.innerHTML = `
-      <div class="hex">${color}</div>
-      <div class="rgb">${rgbValues.r} ${rgbValues.g} ${rgbValues.b}</div>
+      <div class="hex">hex ${color}</div>
+      <div class="rgb">rgb ${rgbValues.r} ${rgbValues.g} ${rgbValues.b}</div>
   `;
   colorModelsComplementary.innerHTML = `
-      <div class="hex">${complementaryColorHex}</div>
-      <div class="rgb">${complementaryColorRGB.r} ${complementaryColorRGB.g} ${complementaryColorRGB.b}</div>
+      <div class="hex">hex ${complementaryColorHex}</div>
+      <div class="rgb">rgb ${complementaryColorRGB.r} ${complementaryColorRGB.g} ${complementaryColorRGB.b}</div>
   `;
 }
 
@@ -85,11 +85,11 @@ function updateColor(event) {
   colorModelsComplementary.style.color = color;
 
   colorModelsOriginal.innerHTML = `
-      <div class="hex">${color}</div>
-      <div class="rgb">${rgbValues.r} ${rgbValues.g} ${rgbValues.b}</div>
+      <div class="hex">hex ${color}</div>
+      <div class="rgb">rgb ${rgbValues.r} ${rgbValues.g} ${rgbValues.b}</div>
     `;
   colorModelsComplementary.innerHTML = `
-      <div class="hex">${complementaryColorHex}</div>
-      <div class="rgb">${complementaryColorRGB.r} ${complementaryColorRGB.g} ${complementaryColorRGB.b}</div>
+      <div class="hex">hex ${complementaryColorHex}</div>
+      <div class="rgb">rgb ${complementaryColorRGB.r} ${complementaryColorRGB.g} ${complementaryColorRGB.b}</div>
     `;
 }
