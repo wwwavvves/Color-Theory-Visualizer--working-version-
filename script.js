@@ -12,52 +12,76 @@ const colorModelsComplementary = document.querySelector(
 
 colorPicker.addEventListener("input", updateColor);
 
-function translateColor(color) {
+// returns rgb
+function getRGBValues(color) {
   const r = parseInt(color.slice(1, 3), 16);
   const g = parseInt(color.slice(3, 5), 16);
   const b = parseInt(color.slice(5, 7), 16);
-
-  const compR = (255 - r).toString(16).padStart(2, "0");
-  const compG = (255 - g).toString(16).padStart(2, "0");
-  const compB = (255 - b).toString(16).padStart(2, "0");
-
-  return `#${compR}${compG}${compB}`;
+  
+  return {r, g, b};
 }
+
+// returns complementary hex
+function getComplementaryColorHex(rgb) {
+  const compRhex = (255 - rgb.r).toString(16).padStart(2, "0");
+  const compGhex = (255 - rgb.g).toString(16).padStart(2, "0");
+  const compBhex = (255 - rgb.b).toString(16).padStart(2, "0");
+
+  return `#${compRhex}${compGhex}${compBhex}`;
+}
+
+// returns complementary rgb
+function getComplementaryColorRGB(hex) {
+  const r = parseInt(hex.slice(1, 3), 16);
+  const g = parseInt(hex.slice(3, 5), 16);
+  const b = parseInt(hex.slice(5, 7), 16);
+
+  return { r, g, b };
+}
+
 
 function defaultColors() {
   const color = colorPicker.value;
-  const complementaryHex = translateColor(color);
+  const rgbValues = getRGBValues(color);
+  const complementaryColorHex = getComplementaryColorHex(rgbValues);
+  const complementaryColorRGB = getComplementaryColorRGB(complementaryColorHex);
 
   originalColor.style.backgroundColor = color;
-  complementaryColor.style.backgroundColor = complementaryHex;
-  titleOriginal.style.color = complementaryHex;
+  titleOriginal.style.color = complementaryColorHex;
+  colorModelsOriginal.style.color = complementaryColorHex;
+  complementaryColor.style.backgroundColor = complementaryColor;
   titleComplementary.style.color = color;
-  colorModelsOriginal.style.color = complementaryHex;
   colorModelsComplementary.style.color = color;
 
   colorModelsOriginal.innerHTML = `
       <div class="hex">${color}</div>
+      <div class="rgb">${rgbValues.r} ${rgbValues.g} ${rgbValues.b}</div>
   `;
   colorModelsComplementary.innerHTML = `
-      <div class="hex">${complementaryHex}</div>
+      <div class="hex">${complementaryColorHex}</div>
+      <div class="rgb">${complementaryColorRGB.r} ${complementaryColorRGB.g} ${complementaryColorRGB.b}</div>
   `;
 }
 
 function updateColor(event) {
   const color = event.target.value;
-  const complementaryHex = translateColor(color);
+  const rgbValues = getRGBValues(color);
+  const complementaryColorHex = getComplementaryColorHex(rgbValues);
+  const complementaryColorRGB = getComplementaryColorRGB(complementaryColorHex);
 
-  originalColor.style.backgroundColor = event.target.value;
-  complementaryColor.style.backgroundColor = complementaryHex;
-  titleOriginal.style.color = complementaryHex;
+  originalColor.style.backgroundColor = color;
+  titleOriginal.style.color = complementaryColorHex;
+  colorModelsOriginal.style.color = complementaryColorHex;
+  complementaryColor.style.backgroundColor = complementaryColorHex;
   titleComplementary.style.color = color;
-  colorModelsOriginal.style.color = complementaryHex;
   colorModelsComplementary.style.color = color;
 
   colorModelsOriginal.innerHTML = `
       <div class="hex">${color}</div>
+      <div class="rgb">${rgbValues.r} ${rgbValues.g} ${rgbValues.b}</div>
     `;
   colorModelsComplementary.innerHTML = `
-      <div class="hex">${complementaryHex}</div>
+      <div class="hex">${complementaryColorHex}</div>
+      <div class="rgb">${complementaryColorRGB.r} ${complementaryColorRGB.g} ${complementaryColorRGB.b}</div>
     `;
 }
