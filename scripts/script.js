@@ -54,9 +54,11 @@ function defaultColors() {
   const complementaryColorHex = getComplementaryColorHex(rgbValues);
   const complementaryColorRGB = getComplementaryColorRGB(complementaryColorHex);
 
+  // original color section
   originalColor.style.backgroundColor = color;
   titleOriginal.style.color = complementaryColorHex;
   colorModelsOriginal.style.color = complementaryColorHex;
+  // complementary color section
   complementaryColor.style.backgroundColor = complementaryColor;
   titleComplementary.style.color = color;
   colorModelsComplementary.style.color = color;
@@ -77,9 +79,11 @@ function updateColor(event) {
   const complementaryColorHex = getComplementaryColorHex(rgbValues);
   const complementaryColorRGB = getComplementaryColorRGB(complementaryColorHex);
 
+  // original color section
   originalColor.style.backgroundColor = color;
   titleOriginal.style.color = complementaryColorHex;
   colorModelsOriginal.style.color = complementaryColorHex;
+  // complementary color section
   complementaryColor.style.backgroundColor = complementaryColorHex;
   titleComplementary.style.color = color;
   colorModelsComplementary.style.color = color;

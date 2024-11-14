@@ -3,25 +3,41 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./styles.css" />
     <title>Color Theory Visualizer</title>
   </head>
   <body>
     <div class="input-container">
-      <input type="color" id="color-picker" name="color-picker" value="#000000" />
+      <input
+        type="color"
+        id="color-picker"
+        name="color-picker"
+        value="#000000"
+      />
+    </div>
+    <div class="dropdown-container">
+      <button class="btn" id="btn">
+        Choose a color combination &#8628;
+        <i class="bx bx-chevron-down" id="arrow"></i>
+      </button>
+      <div class="dropdown" id="dropdown">
+        <a href="#complementary">Complementary </a>
+        <a href="#triadic">Triadic</a>
+        <a href="#analogous">Analogous</a>
+      </div>
     </div>
     <div class="colors-container">
-        <div id="original">
-          <h4 id="title-original">original</h4>
-          <div class="color-models color-models-original"></div>
-        </div>
-        <div id="complementary">
-          <h4 id="title-complementary">complementary</h4>
-          <div class="color-models color-models-complementary"></div>
-        </div>
-
+      <div id="original">
+        <h4 id="title-original">original</h4>
+        <div class="color-models color-models-original"></div>
+      </div>
+      <div id="complementary">
+        <h4 id="title-complementary">complementary</h4>
+        <div class="color-models color-models-complementary"></div>
+      </div>
     </div>
 
-    <script src="./script.js"></script>
+    <script src="./scripts/script.js"></script>
+    <script src="./scripts/dropdown-menu.js"></script>
   </body>
 </html>
