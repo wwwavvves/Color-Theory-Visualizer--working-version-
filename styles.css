@@ -20,26 +20,7 @@ input {
   cursor: pointer;
 }
 
-.colors-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  height: calc(100vh - 200px);
-}
-
-.color-models {
-  padding: 10px;
-  text-transform: uppercase;
-}
-
-#complementary {
-  text-align: right;
-}
-
-h4 {
-  padding: 10px;
-}
-
-/* dropdown test */
+/* dropdown */
 .dropdown-container {
   margin: 10px;
 }
@@ -95,4 +76,31 @@ h4 {
 .dropdown a:hover {
   background-color: var(--color);
   color: rgb(0, 0, 0);
+}
+
+.colors-container  {
+  display: grid;
+  height: 150px;
+}
+
+.complementary-container {
+  grid-template-columns: 1fr 1fr;
+}
+
+.color-models {
+  padding: 10px;
+  text-transform: uppercase;
+}
+
+#complementary {
+  text-align: right;
+}
+
+h4 {
+  padding: 10px;
+}
+
+.triadic-container,
+.analogous-container {
+  grid-template-columns: repeat(3, 1fr);
 }

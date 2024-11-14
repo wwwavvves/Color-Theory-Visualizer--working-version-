@@ -7,6 +7,7 @@
     <title>Color Theory Visualizer</title>
   </head>
   <body>
+    <!-- color picker -->
     <div class="input-container">
       <input
         type="color"
@@ -15,6 +16,8 @@
         value="#000000"
       />
     </div>
+
+    <!-- dropdown -->
     <div class="dropdown-container">
       <button class="btn" id="btn">
         Choose a color combination &#8628;
@@ -26,7 +29,9 @@
         <a href="#analogous">Analogous</a>
       </div>
     </div>
-    <div class="colors-container">
+
+    <!-- colors container -->
+    <div class="colors-container complementary-container">
       <div id="original">
         <h4 id="title-original">original</h4>
         <div class="color-models color-models-original"></div>
@@ -35,6 +40,18 @@
         <h4 id="title-complementary">complementary</h4>
         <div class="color-models color-models-complementary"></div>
       </div>
+    </div>
+
+    <div class="colors-container triadic-container">
+      <div>original</div>
+      <div>triadic1</div>
+      <div>triadic2</div>
+    </div>
+
+    <div class="colors-container analogous-container">
+      <div>original</div>
+      <div>triadic1</div>
+      <div>triadic2</div>
     </div>
 
     <script src="./scripts/script.js"></script>
