@@ -8,7 +8,7 @@
   </head>
   <body>
     <!-- color picker -->
-    <div class="input-container">
+    <div class="color-picker-container">
       <input
         type="color"
         id="color-picker"
@@ -18,7 +18,7 @@
     </div>
 
     <!-- dropdown -->
-    <div class="dropdown-container">
+    <!-- <div class="dropdown-container">
       <button class="btn" id="btn">
         Choose a color combination &#8628;
         <i class="bx bx-chevron-down" id="arrow"></i>
@@ -28,33 +28,39 @@
         <a href="#triadic">Triadic</a>
         <a href="#analogous">Analogous</a>
       </div>
-    </div>
+    </div> -->
 
     <!-- colors container -->
-    <div class="colors-container complementary-container">
-      <div id="original">
-        <h4 id="title-original">original</h4>
-        <div class="color-models color-models-original"></div>
+    <div class="colors-container">
+      <div class="complementary-container">
+        <div class="color original">
+          <h4 id="title-original">original</h4>
+          <!-- <div class="color-models color-models-original"></div> -->
+        </div>
+        <div class="color complementary">
+          <h4 id="title-complementary">complementary</h4>
+          <!-- <div class="color-models color-models-complementary"></div> -->
+        </div>
       </div>
-      <div id="complementary">
-        <h4 id="title-complementary">complementary</h4>
-        <div class="color-models color-models-complementary"></div>
+      <div class="triadic-container">
+        <div class="color original">
+          <h4>original</h4>
+        </div>
+        <div class="color">triadic1</div>
+        <div class="color">triadic2</div>
+      </div>
+      <div class="analogous-container">
+        <div class="color original">original</div>
+        <div class="color">analogous1</div>
+        <div class="color">analogous2</div>
+        <div class="color">analogous3</div>
+        <div class="color">analogous4</div>
+        <div class="color">analogous5</div>
       </div>
     </div>
 
-    <div class="colors-container triadic-container">
-      <div>original</div>
-      <div>triadic1</div>
-      <div>triadic2</div>
-    </div>
-
-    <div class="colors-container analogous-container">
-      <div>original</div>
-      <div>triadic1</div>
-      <div>triadic2</div>
-    </div>
-
-    <script src="./scripts/script.js"></script>
-    <script src="./scripts/dropdown-menu.js"></script>
+    <!-- <script src="./scripts/script.js"></script> -->
+    <!-- <script src="./scripts/dropdown-menu.js"></script> -->
+    <script src="scripts/script2.js"></script>
   </body>
 </html>

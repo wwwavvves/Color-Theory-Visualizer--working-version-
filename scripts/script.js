@@ -1,3 +1,4 @@
+// runs the defaultColors function when the page loads, setting initial values
 document.addEventListener("DOMContentLoaded", defaultColors);
 
 const colorPicker = document.querySelector("#color-picker");
@@ -10,6 +11,7 @@ const colorModelsComplementary = document.querySelector(
   ".color-models-complementary"
 );
 
+// calls updateColor() whenever the user selects a new color
 colorPicker.addEventListener("input", updateColor);
 
 // returns rgb
@@ -47,7 +49,7 @@ function getComplementaryColorRGB(hex) {
   return { r, g, b };
 }
 
-
+// runs when the page loads
 function defaultColors() {
   const color = colorPicker.value;
   const rgbValues = getRGBValues(color);
@@ -59,7 +61,7 @@ function defaultColors() {
   titleOriginal.style.color = complementaryColorHex;
   colorModelsOriginal.style.color = complementaryColorHex;
   // complementary color section
-  complementaryColor.style.backgroundColor = complementaryColor;
+  complementaryColor.style.backgroundColor = complementaryColorHex;
   titleComplementary.style.color = color;
   colorModelsComplementary.style.color = color;
 
@@ -73,6 +75,7 @@ function defaultColors() {
   `;
 }
 
+// updates the color display when the user picks a new color
 function updateColor(event) {
   const color = event.target.value;
   const rgbValues = getRGBValues(color);
