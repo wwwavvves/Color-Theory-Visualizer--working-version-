@@ -12,21 +12,34 @@
 
 #color-picker {
   display: block;
-  margin: 0 auto;
+  margin: 30px auto;
   border: none;
   background-color: transparent;
-  height: 100px;
+  height: 40px;
   width: 200px;
   cursor: pointer;
 }
 
-.colors-container > *{
+.colors-container > * {
   margin-bottom: 20px;
-  display: flex;
-  gap: 10px;
+}
+
+.color-combo-container {
+  display: grid;
+}
+
+.complementary-container {
+  grid-template-columns: 1fr 1fr;
+}
+
+.triadic-container {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.analogous-container {
+  grid-template-columns: repeat(6, 1fr);
 }
 
 .color {
-  width: 130px;
-  height: 130px;
+  height: calc(100vh - 100px);
 }
